@@ -85,10 +85,9 @@ async function main() {
   const config = new Config({
     networks: {
       goerli: {
-        entryPoints: ["0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789"],
-        relayer:
-          "1a13367d464992133bcd429baad47e352f467d2ff58c676b6f11c7ca0a21c698",
-        beneficiary: "0x242ed78bF0FE7672FF01AE6dE558E45B3749f197",
+        entryPoints: [process.env.GOERLI_ENTRYPOINT as string],
+        relayer: process.env.GOERLI_RELAYER as string,
+        beneficiary: process.env.GOERLI_BENEFICIARY as string,
         name: "goerli",
         rpcEndpoint: "https://goerli.blockpi.network/v1/rpc/public",
         minInclusionDenominator: bundlerDefaultConfigs.minInclusionDenominator,
@@ -98,11 +97,10 @@ async function main() {
         multicall: bundlerDefaultConfigs.multicall,
       },
       sepolia: {
-        entryPoints: ["0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789"],
-        relayer:
-          "1a13367d464992133bcd429baad47e352f467d2ff58c676b6f11c7ca0a21c698",
-        beneficiary: "0x242ed78bF0FE7672FF01AE6dE558E45B3749f197",
-        name: "goerli",
+        entryPoints: [process.env.SEPOLIA_ENTRYPOINT as string],
+        relayer: process.env.SEPOLIA_RELAYER as string,
+        beneficiary: process.env.SEPOLIA_BENEFICIARY as string,
+        name: "sepolia",
         rpcEndpoint: "https://rpc.sepolia.org",
         minInclusionDenominator: bundlerDefaultConfigs.minInclusionDenominator,
         throttlingSlack: bundlerDefaultConfigs.throttlingSlack,
