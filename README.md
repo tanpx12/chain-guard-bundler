@@ -6,7 +6,7 @@ This is a simple implementation of account abstraction bundler. This implementat
 - `eth_getUserOperationByHash`: Return a UserOperation based on a hash (userOpHash) returned by `eth_sendUserOperation`
 - `eth_getUserOperationReceipt`: Return a UserOperation receipt based on a hash (userOpHash) returned by `eth_sendUserOperation`
 - `eth_supportedEntryPoints`: Returns an array of the entryPoint addresses supported by the client. The first element of the array SHOULD be the entryPoint addressed preferred by the client.
-- `eth_chainId`: Returns `EIP-155 `Chain ID.
+- `eth_chainId`: Returns `EIP-155` Chain ID.
 - `debug_bundler_clearState`: Clears the bundler mempool and reputation data of paymasters/accounts/factories/aggregators.
 - `debug_bundler_dumpMempool`: Dumps the current UserOperations mempool
 - `debug_bundler_sendBundleNow`: Forces the bundler to build and execute a bundle from the mempool as `handleOps()` transaction.
