@@ -42,7 +42,20 @@ This is a simple implementation of account abstraction bundler. This implementat
 	"jsonrpc": "2.0",
 	"id": 1,
 	"method": "eth_sendUserOperation",
-	"params": [userOperation, entryPoint]
+	"params": [{
+	sender, // address
+      	nonce, // uint256
+      	initCode, // bytes
+      	callData, // bytes
+      	callGasLimit, // uint256
+      	verificationGasLimit, // uint256
+      	preVerificationGas, // uint256
+      	maxFeePerGas, // uint256
+      	maxPriorityFeePerGas, // uint256
+      	paymasterAndData, // bytes
+      	signature // bytes
+    	},
+    	entryPoint // address]
 }
 
 // Response
@@ -62,7 +75,20 @@ This is a simple implementation of account abstraction bundler. This implementat
 	"jsonrpc" : "2.0",
 	"id" : 1,
 	"method": "eth_estimateUserOperationGas",
-	"params":[userOperation, entryPoint]
+	"params":[{
+      sender, // address
+      nonce, // uint256
+      initCode, // bytes
+      callData, // bytes
+      callGasLimit, // uint256
+      verificationGasLimit, // uint256
+      preVerificationGas, // uint256
+      maxFeePerGas, // uint256
+      maxPriorityFeePerGas, // uint256
+      paymasterAndData, // bytes
+      signature // bytes
+    },
+    entryPoint // address]
 }
 
 // Response
