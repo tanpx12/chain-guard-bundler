@@ -85,9 +85,9 @@ async function main() {
   const config = new Config({
     networks: {
       goerli: {
-        entryPoints: [process.env.GOERLI_ENTRYPOINT as string],
-        relayer: process.env.GOERLI_RELAYER as string,
-        beneficiary: process.env.GOERLI_BENEFICIARY as string,
+        entryPoints: [process.env.ENTRYPOINT as string],
+        relayer: process.env.RELAYER as string,
+        beneficiary: process.env.BENEFICIARY as string,
         name: "goerli",
         rpcEndpoint: "https://goerli.blockpi.network/v1/rpc/public",
         minInclusionDenominator: bundlerDefaultConfigs.minInclusionDenominator,
@@ -97,9 +97,9 @@ async function main() {
         multicall: bundlerDefaultConfigs.multicall,
       },
       sepolia: {
-        entryPoints: [process.env.SEPOLIA_ENTRYPOINT as string],
-        relayer: process.env.SEPOLIA_RELAYER as string,
-        beneficiary: process.env.SEPOLIA_BENEFICIARY as string,
+        entryPoints: [process.env.ENTRYPOINT as string],
+        relayer: process.env.RELAYER as string,
+        beneficiary: process.env.BENEFICIARY as string,
         name: "sepolia",
         rpcEndpoint: "https://rpc.sepolia.org",
         minInclusionDenominator: bundlerDefaultConfigs.minInclusionDenominator,

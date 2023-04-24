@@ -2,12 +2,9 @@ import { NETWORK_NAME_TO_CHAIN_ID, NetworkName } from "./types/networks";
 import { IDbController } from "./types/db";
 import { Executor } from "./executor";
 import { Config } from "./common/config";
-import RpcError from "./types/api/errors/rpc-error";
-import * as RpcErrorCodes from "./types/api/errors/rpc-error-codes";
 import { BundlerRPCMethods, CustomRPCMethods } from "./constants";
 import { deepHexlify } from "./utils";
 import { FastifyInstance, RouteHandler } from "fastify";
-import { Debug, Eth } from "./modules";
 import logger from "./logger";
 
 export interface RpcHandlerOptions {
