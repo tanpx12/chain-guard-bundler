@@ -8,6 +8,7 @@ import { ApiApp } from "./app";
 import { Config, bundlerDefaultConfigs } from "./common/config";
 import { IDbController } from "./types/db";
 import { RocksDbController } from "./db/rocksDb";
+import cors from "@fastify/cors";
 
 class Server {
   private app: FastifyInstance;
@@ -116,13 +117,17 @@ async function main() {
     port: 5000,
     host: "localhost",
   });
-
+  server.application.register(cors, {
+    origin: "*",
+    methods: ["POST"],
+  });
   new ApiApp({
     server: server.application,
     config: config,
     db: db,
     testingMode: false,
   });
+
   server.listen();
 }
 

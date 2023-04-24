@@ -9,7 +9,6 @@ export const BundlerRPCMethods = {
   eth_estimateUserOperationGas: "eth_estimateUserOperationGas",
   eth_getUserOperationReceipt: "eth_getUserOperationReceipt",
   eth_getUserOperationByHash: "eth_getUserOperationByHash",
-  // web3_clientVersion: "web3_clientVersion",
   debug_bundler_clearState: "debug_bundler_clearState",
   debug_bundler_dumpMempool: "debug_bundler_dumpMempool",
   debug_bundler_setReputation: "debug_bundler_setReputation",

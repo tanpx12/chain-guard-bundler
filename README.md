@@ -165,5 +165,3 @@ This is a simple implementation of account abstraction bundler. This implementat
 	"chainId": ...	
 }
 ```
-
-## 
