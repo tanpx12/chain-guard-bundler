@@ -36,7 +36,7 @@ This is a simple implementation of account abstraction bundler. This implementat
 # Methods
 ## eth_sendUserOperation
 
-``` json
+``` 
 // Request 
 {
 	"jsonrpc": "2.0",
@@ -69,7 +69,7 @@ This is a simple implementation of account abstraction bundler. This implementat
 
 ## eth_estimateUserOperationGas 
 
-```json
+```
 // Request
 {
 	"jsonrpc" : "2.0",
@@ -105,7 +105,7 @@ This is a simple implementation of account abstraction bundler. This implementat
 
 ## eth_getUserOperationByHash
 
-```json
+```
 // Request 
 {
 	"jsonrpc" : "2.0",
@@ -129,7 +129,7 @@ This is a simple implementation of account abstraction bundler. This implementat
 
 ## eth_getUserOperationReceipt
 
-```json
+```
 // Request
 {
 	"jsonrpc": "2.0",
@@ -155,7 +155,7 @@ This is a simple implementation of account abstraction bundler. This implementat
 
 ## eth_supportedEntryPoints
 
-``` json
+``` 
 // Request
 {
 	"jsonrpc": "2.0",
@@ -175,7 +175,7 @@ This is a simple implementation of account abstraction bundler. This implementat
 
 ## eth_chainId
 
-```json
+```
 // Request
 {
 	"jsonrpc": "2.0",
