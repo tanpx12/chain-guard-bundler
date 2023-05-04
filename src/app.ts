@@ -6,7 +6,6 @@ import { BundlerRPCMethods, CustomRPCMethods } from "./constants";
 import { deepHexlify } from "./utils";
 import { FastifyInstance, RouteHandler } from "fastify";
 import logger from "./logger";
-import cors from "@fastify/cors";
 
 export interface RpcHandlerOptions {
   network: NetworkName;

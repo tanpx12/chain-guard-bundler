@@ -9,6 +9,8 @@ import { Config, bundlerDefaultConfigs } from "./common/config";
 import { IDbController } from "./types/db";
 import { RocksDbController } from "./db/rocksDb";
 import cors from "@fastify/cors";
+import * as dotenv from "dotenv";
+dotenv.config();
 
 class Server {
   private app: FastifyInstance;
