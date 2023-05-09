@@ -1,16 +1,12 @@
-import { readFileSync } from "node:fs";
-import { resolve } from "node:path";
 import fastify, { FastifyInstance } from "fastify";
 import RpcError from "./types/api/errors/rpc-error";
 import { ServerConfig } from "./types/api/interfaces";
 import logger from "./logger";
 import { ApiApp } from "./app";
-import { Config, bundlerDefaultConfigs } from "./common/config";
+import { globalConfig } from "./common/globalConfig";
 import { IDbController } from "./types/db";
 import { RocksDbController } from "./db/rocksDb";
 import cors from "@fastify/cors";
-import * as dotenv from "dotenv";
-dotenv.config();
 
 class Server {
   private app: FastifyInstance;
@@ -85,35 +81,7 @@ class Server {
 async function main() {
   let db: IDbController = new RocksDbController("rocksDb", "test");
   await db.start();
-  const config = new Config({
-    networks: {
-      goerli: {
-        entryPoints: [process.env.ENTRYPOINT as string],
-        relayer: process.env.RELAYER as string,
-        beneficiary: process.env.BENEFICIARY as string,
-        name: "goerli",
-        rpcEndpoint: "https://goerli.blockpi.network/v1/rpc/public",
-        minInclusionDenominator: bundlerDefaultConfigs.minInclusionDenominator,
-        throttlingSlack: bundlerDefaultConfigs.throttlingSlack,
-        banSlack: bundlerDefaultConfigs.banSlack,
-        minSignerBalance: bundlerDefaultConfigs.minSignerBalance,
-        multicall: bundlerDefaultConfigs.multicall,
-      },
-      sepolia: {
-        entryPoints: [process.env.ENTRYPOINT as string],
-        relayer: process.env.RELAYER as string,
-        beneficiary: process.env.BENEFICIARY as string,
-        name: "sepolia",
-        rpcEndpoint: "https://rpc.sepolia.org",
-        minInclusionDenominator: bundlerDefaultConfigs.minInclusionDenominator,
-        throttlingSlack: bundlerDefaultConfigs.throttlingSlack,
-        banSlack: bundlerDefaultConfigs.banSlack,
-        minSignerBalance: bundlerDefaultConfigs.minSignerBalance,
-        multicall: bundlerDefaultConfigs.multicall,
-      },
-    },
-    testingMode: true,
-  });
+  const config = globalConfig;
   const server = new Server({
     enableRequestLogging: true,
     port: 5000,
