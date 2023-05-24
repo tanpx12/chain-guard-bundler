@@ -3,7 +3,7 @@
 
 - Install all dependencies of this repo
 - Create folder `rocksDb/test` in the root of this folder
-- Create `.env` file with `.env.example` template
+- Create `./src/common/globalConfig.ts` file with `./src/common/globalConfig.example.ts` template
 - Run `ts-node src/app.ts`
 
 ## Descriptions
