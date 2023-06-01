@@ -34,6 +34,7 @@ export class BundlingService {
     private logger: Logger
   ) {
     this.mutex = new Mutex();
+
     this.bundlingMode = "auto";
     this.autoBundlingInterval = 15 * 1000;
     this.maxMempoolSize = 2;

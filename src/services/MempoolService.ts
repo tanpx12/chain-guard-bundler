@@ -11,6 +11,7 @@ import {
 } from "../models/EntitiesInterface";
 import { ReputationService } from "./ReputationService";
 import { StakeInfo } from "./UserOpValidation";
+import { hexValue } from "@ethersproject/bytes";
 
 export class MempoolService {
   private MAX_MEMPOOL_USEROPS_PER_SENDER = 4;

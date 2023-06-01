@@ -112,7 +112,7 @@ export class MempoolEntry implements IMempoolEntry {
         paymasterAndData: this.userOp.paymasterAndData,
         signature: this.userOp.signature,
       },
-      prefund: hexValue(this.prefund),
+      prefund: hexValue(BigNumber.from(this.prefund)),
       aggregator: this.aggregator,
       hash: this.hash,
     };

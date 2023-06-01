@@ -70,14 +70,12 @@ export class ApiApp {
           result = await executor.debug.setBundlingMode(params[0]);
           break;
         case BundlerRPCMethods.debug_bundler_setBundleInterval:
-          result = await executor.debug.setbundlingInterval(params[0]);
+          result = executor.debug.setbundlingInterval(params[0]);
           break;
         case BundlerRPCMethods.debug_bundler_clearState:
           result = await executor.debug.clearState();
           break;
         case BundlerRPCMethods.debug_bundler_dumpMempool:
-          console.log(method);
-
           result = await executor.debug.dumpMempool();
           break;
         case BundlerRPCMethods.debug_bundler_setReputation:

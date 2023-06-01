@@ -54,12 +54,11 @@ export class Eth {
         userOp,
         entryPoint
       );
-
     this.logger.debug("Validation successful. Saving in mempool...");
     await this.mempoolService.addUserOp(
       userOp,
       entryPoint,
-      validationResult.returnInfo.prefund,
+      validationResult.returnInfo.prefund.toString(),
       validationResult.senderInfo,
       validationResult.referencedContracts?.hash
     );

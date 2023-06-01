@@ -17,7 +17,7 @@ This is a simple implementation of account abstraction bundler. This implementat
 
 - `eth_getUserOperationReceipt`: Return a UserOperation receipt based on a hash (userOpHash) returned by `eth_sendUserOperation`
 
-- `eth_supportedEntryPoints`: Returns an array of the entryPoint addresses supported by the client. The first element of the array SHOULD be the entryPoint addressed preferred by the client.
+- `eth_supportedEntryPoints`: Returns a list of the entryPoint addresses supported by the client. The first element of the array SHOULD be the entryPoint addressed preferred by the client.
 
 - `eth_chainId`: Returns `EIP-155` Chain ID.
 
